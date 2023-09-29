@@ -5052,9 +5052,9 @@ void MergeTreeData::restorePartsFromBackup(RestorerFromBackup & restorer, const 
             [storage = std::static_pointer_cast<MergeTreeData>(shared_from_this()),
              backup,
              part_path_in_backup = data_path_in_backup_fs / part_name,
-             part_info=*part_info,
+             my_part_info=*part_info,
              restored_parts_holder]
-            { storage->restorePartFromBackup(restored_parts_holder, part_info, part_path_in_backup); });
+            { storage->restorePartFromBackup(restored_parts_holder, my_part_info, part_path_in_backup); });
 
         ++num_parts;
     }

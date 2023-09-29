@@ -319,7 +319,7 @@ void PipelineExecutor::spawnThreads()
         tasks.upscale(thread_num + 1);
 
         /// Start new thread
-        threads.emplace_back([this, thread_num, thread_group = CurrentThread::getGroup(), slot = std::move(slot)]
+        threads.emplace_back([this, thread_num, thread_group = CurrentThread::getGroup(), my_slot = std::move(slot)]
         {
             /// ThreadStatus thread_status;
 
